@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitLife – Fitness & Wellness Platform</title>
+  <!-- Lexend Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html, body {
+      font-family: 'Lexend', sans-serif;
+      background: #0E2148;
+      color: #E3D095;
+    }
+    [data-scroll-offset] {
+      scroll-margin-top: 5rem;
+    }
+    /* Custom dark scrollbars for aesthetics */
+    ::-webkit-scrollbar {
+      width: 8px;
+      background: #0E2148;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #483AA0;
+      border-radius: 4px;
+    }
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 8px 2px #E3D095, 0 0 0px 0 #E3D095;
+      }
+      50% {
+        box-shadow: 0 0 16px 2px #E3D095, 0 0 0px 0 #E3D095;
+      }
+      100% {
+        box-shadow: 0 0 8px 2px #E3D095, 0 0 0px 0 #E3D095;
+      }
+    }
+    .animate-glow {
+      animation: glow 1.8s infinite alternate;
+    }
+  </style>
+</head>
+<body class="bg-[#0E2148] text-[#E3D095] min-h-screen">
+  <!-- Header / Navbar -->
+  <header class="fixed top-0 left-0 w-full z-30 bg-[#0E2148]/90 backdrop-blur shadow transition-shadow">
+    <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+      <!-- Logo -->
+      <div class="text-2xl md:text-3xl font-extrabold tracking-tight select-none" style="color:#E3D095;">
+        Fit<span class="font-bold" style="color:#483AA0;">Life</span>
+      </div>
+      <!-- Navigation Links -->
+      <ul class="hidden md:flex gap-8 text-base font-medium">
+        <li><a href="#" class="hover:text-[#E3D095] transition text-[#E3D095]">Home</a></li>
+        <li><a href="#about-us-section" class="hover:text-[#E3D095] transition text-[#E3D095]">About Us</a></li>
+        <li><a href="#services-section" class="hover:text-[#E3D095] transition text-[#E3D095]">Services</a></li>
+        <li><a href="#blog" class="hover:text-[#E3D095] transition text-[#E3D095]">Blog</a></li>
+        <li><a href="#contact" class="hover:text-[#E3D095] transition text-[#E3D095]">Contact</a></li>
+      </ul>
+      <!-- CTA Buttons -->
+      <div class="flex gap-3">
+        <a href="#login" class="hidden md:inline-block px-5 py-2 rounded-lg border border-[#E3D095] text-[#E3D095] font-semibold hover:bg-[#483AA0]/30 transition">Login</a>
+        <a href="#signup" class="inline-block px-5 py-2 rounded-lg bg-[#E3D095] text-[#0E2148] font-semibold shadow hover:bg-[#E3D095]/80 transition">Sign Up</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section
+    class="relative w-full flex items-center justify-center bg-cover bg-center"
+    style="background-image: url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGd5bXxlbnwwfHwwfHx8MA%3D%3D'); min-height: 110vh; height: 110vh;"
+  >
+    <!-- Aesthetic Blur Overlay (no purple, just dark for image clarity) -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-[3px]"></div>
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-3xl mx-auto text-center px-4 py-24 w-full">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 drop-shadow-lg" style="color:#E3D095;">Start Your Fitness Journey With Us</h1>
+      <p class="text-lg md:text-xl font-medium mb-8 opacity-90" style="color:#E3D095;">
+        Personalized workouts, expert diet plans, and a supportive community to achieve your health goals.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+        <a href="#workout-planner-section"
+           class="px-7 py-3 rounded-xl bg-[#483AA0] hover:bg-[#7965C1] font-semibold text-[#E3D095] shadow-lg transition transform hover:scale-105 focus:outline-none w-72 text-center">
+          Explore Workout Planner
+        </a>
+        <div class="relative w-72 flex justify-center">
+          <a href="#dietitian-premium-section"
+             class="relative px-7 py-3 rounded-xl bg-[#0E2148] text-[#E3D095] font-semibold border-2 border-[#E3D095] hover:bg-[#E3D095] hover:text-[#0E2148] shadow-lg transition transform hover:scale-105 focus:outline-none animate-glow text-center block w-full">
+            Discover Dietitian Plans
+          </a>
+          <!-- Premium Badge -->
+          <span class="absolute -top-3 -right-3 bg-[#E3D095] text-[#0E2148] text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-[#483AA0] z-10"
+                style="transform: rotate(30deg);">
+            Premium
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about-us-section" data-scroll-offset class="py-20 bg-[#0E2148]">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color:#E3D095;">About FitLife</h2>
+      <p class="text-lg md:text-xl font-medium leading-relaxed" style="color:#E3D095;">
+        FitLife is dedicated to empowering individuals on their wellness journey. Our mission is to provide accessible, personalized fitness and nutrition solutions for everyone. With a focus on innovation, community, and expert guidance, we help you achieve your goals and build lasting healthy habits.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services-section" data-scroll-offset class="py-20 bg-[#0E2148]">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color:#E3D095;">Our Services</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Workout Planner Card -->
+        <div id="workout-planner-section" data-scroll-offset class="bg-[#483AA0] rounded-xl shadow-lg p-8 flex flex-col items-center text-center transition hover:shadow-2xl group border border-[#7965C1]">
+          <!-- Icon -->
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-[#E3D095] mx-auto" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2a4 4 0 014-4h4m0 0V7m0 4l-4-4m-2 8v2a4 4 0 01-4 4H5m0 0v-4m0 4l4-4"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3" style="color:#E3D095;">Personalized Workout Planner</h3>
+          <p class="mb-6" style="color:#E3D095;">
+            AI-powered custom routines, extensive exercise library, progress tracking, and goal setting.
+          </p>
+          <a href="#"
+            class="px-6 py-2 rounded-lg bg-[#E3D095] text-[#0E2148] font-semibold shadow hover:bg-[#7965C1] hover:text-[#E3D095] transition transform hover:scale-105 focus:outline-none">
+            Get Started with Workouts
+          </a>
+        </div>
+        <!-- Dietitian Premium Card -->
+        <div id="dietitian-premium-section" data-scroll-offset class="bg-[#483AA0] rounded-xl shadow-lg p-8 flex flex-col items-center text-center transition hover:shadow-2xl group border border-[#7965C1]">
+          <!-- Icon -->
+          <div class="mb-4">
+            <svg class="w-12 h-12 text-[#E3D095] mx-auto" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2.21 0-4 1.79-4 4 0 2.21 1.79 4 4 4s4-1.79 4-4c0-2.21-1.79-4-4-4zm0 0V4m0 16v-4"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-3" style="color:#E3D095;">Expert Dietitian Premium</h3>
+          <p class="mb-6" style="color:#E3D095;">
+            Customized meal plans, one-on-one virtual consultations, nutritional guidance, and macro tracking.
+          </p>
+          <a href="#"
+            class="px-6 py-2 rounded-lg bg-[#E3D095] text-[#0E2148] font-semibold shadow hover:bg-[#7965C1] hover:text-[#E3D095] transition transform hover:scale-105 focus:outline-none">
+            Unlock Premium Diet Plans
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-[#483AA0]">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" style="color:#E3D095;">What Our Users Say</h2>
+      <div class="flex flex-col md:flex-row gap-8 justify-center">
+        <!-- Testimonial 1 -->
+        <div class="bg-[#0E2148] rounded-xl shadow p-6 flex-1 flex flex-col items-center text-center transition hover:shadow-lg border border-[#7965C1]">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-16 h-16 rounded-full mb-4 object-cover border-2 border-[#E3D095]">
+          <h4 class="font-semibold text-lg mb-2" style="color:#E3D095;">Alex Johnson</h4>
+          <p class="italic" style="color:#E3D095;">"FitLife's workout planner kept me motivated and on track. The community is so supportive!"</p>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="bg-[#0E2148] rounded-xl shadow p-6 flex-1 flex flex-col items-center text-center transition hover:shadow-lg border border-[#7965C1]">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-16 h-16 rounded-full mb-4 object-cover border-2 border-[#E3D095]">
+          <h4 class="font-semibold text-lg mb-2" style="color:#E3D095;">Priya Sharma</h4>
+          <p class="italic" style="color:#E3D095;">"The dietitian premium plan was a game changer for my nutrition. Highly recommend!"</p>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="bg-[#0E2148] rounded-xl shadow p-6 flex-1 flex flex-col items-center text-center transition hover:shadow-lg border border-[#7965C1]">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="User" class="w-16 h-16 rounded-full mb-4 object-cover border-2 border-[#E3D095]">
+          <h4 class="font-semibold text-lg mb-2" style="color:#E3D095;">Michael Lee</h4>
+          <p class="italic" style="color:#E3D095;">"Easy to use, beautiful design, and real results. FitLife is the best fitness platform out there."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-20 bg-[#7965C1] text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-6" style="color:#E3D095;">Ready to Transform Your Life? Join FitLife Today!</h2>
+    <a href="#signup" class="inline-block px-8 py-4 rounded-xl bg-[#E3D095] text-[#0E2148] font-bold text-lg shadow-lg hover:bg-[#483AA0] hover:text-[#E3D095] transition transform hover:scale-105 focus:outline-none">
+      Sign Up Now
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0E2148] border-t border-[#483AA0] py-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-[#E3D095] text-sm">&copy; 2025 FitLife. All rights reserved.</div>
+      <div class="flex gap-6 text-[#E3D095] text-sm">
+        <a href="#" class="hover:text-[#E3D095]/80 transition">Privacy Policy</a>
+        <a href="#" class="hover:text-[#E3D095]/80 transition">Terms of Service</a>
+      </div>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-[#E3D095]/80 transition">Twitter</a>
+        <a href="#" class="hover:text-[#E3D095]/80 transition">Instagram</a>
+        <a href="#" class="hover:text-[#E3D095]/80 transition">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Smooth Scroll & Animations -->
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').slice(1);
+        if (targetId && document.getElementById(targetId)) {
+          e.preventDefault();
+          document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Fade-in/slide-up animation for sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
